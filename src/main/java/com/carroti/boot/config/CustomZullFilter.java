@@ -36,7 +36,7 @@ public class CustomZullFilter extends ZuulFilter {
         HttpServletRequest request = ctx.getRequest();
 
         System.out.println(String.format("%s request to %s", request.getMethod(), request.getRequestURL().toString()));
-
+        
         
         
         
