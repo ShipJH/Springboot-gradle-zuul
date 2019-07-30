@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: springboot-gradle-zuul
+    
+server:
+  port: 8080
+
+
+
+
+zuul:
+  sensitive-headers:
+  host:
+    connect-timeout-millis: 600000
+    socket-timeout-millis: 600000
+  routes:
+    a-api:
+      path: /api/products/**
+      url: http://localhost:8081
+      stripPrefix: false
+    b-api:
+      path: /bars/**
+      url: http://localhost:8082
+      stripPrefix: false
+  ribbon:
+    eager-load:
+      enabled: false
